@@ -3,7 +3,7 @@ resource "aws_vpc" "main" {
        enable_dns_support =true
        enable_dns_hostnames =true
 
-       Tags ={
+       tags ={
        Name = "${var.environment}-vpc"
        environment = var.environment
        }
@@ -11,7 +11,7 @@ resource "aws_vpc" "main" {
 
 resource "aws_internet_gateway" "main" {
        vpc_id = aws_vpc.main.id
-       Tags={
+       tags={
        Name ="${var.environment}-vpc"
        environment=var.environment
      }
